@@ -14,6 +14,7 @@ def test_standard(number):
   cnf_file_name = f"tests/cnfs/{base_name}.cnf"
   assignments_file_name = f"tests/assignments/{base_name}.txt"
   resolutions_file_name = f"tests/resolutions/{base_name}.txt"
+  solutions_file_name = f"tests/solutions/{base_name}.txt"
 
   with open(puzzle_file_name, "r") as puzzle:
     with open(cnf_file_name, "w") as cnf:
@@ -43,16 +44,17 @@ def test_standard(number):
         raise Exception("minisat failed on test", number)
 
   with open(assignments_file_name, "r") as assignment:
-    with open("/dev/null", "w") as dev_null:
-      sat2sud_response = subprocess.call(
-        ["./sat2sud"],
-        stdin=assignment,
-        stdout=dev_null,
-        stderr=dev_null
-      )
-      if sat2sud_response != 0:
-        debug("sat2sud failed on test", number)
-        raise Exception("sat2sud failed on test", number)
+    with open(solutions_file_name, "w") as solution:
+      with open("/dev/null", "w") as dev_null:
+        sat2sud_response = subprocess.call(
+          ["./sat2sud"],
+          stdin=assignment,
+          stdout=solution,
+          stderr=dev_null
+        )
+        if sat2sud_response != 0:
+          debug("sat2sud failed on test", number)
+          raise Exception("sat2sud failed on test", number)
 
 if __name__ == "__main__":
   debug("Hello, world!")

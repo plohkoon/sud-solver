@@ -9,3 +9,4 @@
 
 tests/resolutions/*.txt
 tests/assignments/*.txt
+tests/solutions/*.txt
