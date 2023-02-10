@@ -12,26 +12,27 @@ def clean(raw_puzzle):
   return standardized
 
 # @param sub_cnfs: A list of CNF forms that are to be combined
+# @param dimension: The dimension of the sudoku puzzle
 # @return: A string representing the CNF form of the combined CNFs
-def build_cnf_string(sub_cnfs):
+def build_cnf_string(sub_cnfs, dimension):
   list_of_clauses = [
     " ".join(map(str, clause + [0])) for cnf in sub_cnfs for clause in cnf
   ]
   cnf_string = "\n".join(list_of_clauses)
 
   number_of_clauses = len(list_of_clauses)
-  # TODO: This might be too static?
-  number_of_variables = 81 * 9
+  number_of_variables = dimension ** 3
 
   return f"p cnf {number_of_variables} {number_of_clauses}\n{cnf_string}"
 
 def main():
   input_str = sys.stdin.read()
   sudoku = clean(input_str)
+  dimension = int(len(sudoku) ** 0.5)
 
   print(sudoku)
 
-  print(build_cnf_string([[[1,2],[3,4]], [[5,6]]]))
+  print(build_cnf_string([[[1,2],[3,4]], [[5,6]]], dimension))
 
 if __name__ == '__main__':
   main()
