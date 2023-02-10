@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 
-from typing import NewType
 import sys
 
-CNF = NewType("CNF", list[list[int]])
-
-def clean(raw_puzzle: str) -> str:
+# @param raw_puzzle: A string representing the puzzle to be solved
+# @return: A string representing the puzzle in a standardized format
+def clean(raw_puzzle):
   single_line = raw_puzzle.replace('\n', '')
   cleaned = single_line.strip()
   standardized = cleaned.translate(str.maketrans('0.*?', '0000'))
 
   return standardized
 
-def build_cnf_string(sub_cnfs: list[CNF]) -> str:
+# @param sub_cnfs: A list of CNF forms that are to be combined
+# @return: A string representing the CNF form of the combined CNFs
+def build_cnf_string(sub_cnfs):
   list_of_clauses = [
     " ".join(map(str, clause + [0])) for cnf in sub_cnfs for clause in cnf
   ]
