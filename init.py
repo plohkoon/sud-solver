@@ -600,7 +600,7 @@ hard_raw = """4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..
 .....2.......7...17..3...9.8..7......2.89.6...13..6....9..5.824.....891..........
 3...8.......7....51..............36...2..4....7...........6.13..452...........8.."""
 
-for f in glob.glob("./tests/*"):
+for f in glob.glob("./tests/puzzles/*.txt"):
   os.remove(f)
 
 grids = raw.split("\nGrid ")
@@ -613,8 +613,9 @@ for grid in grids:
   if number == "":
     continue
 
-  with open(f"tests/test_{number}.txt", "w") as f:
+  with open(f"tests/puzzles/test_{number}.txt", "w") as f:
     f.write("\n".join(grid))
 
-with open("tests/hard.txt", "w") as f:
-  f.write(hard_raw)
+for test, num in enumerate(hard_raw.split("\n")):
+  with open(f"tests/puzzles/hard_{test + 1:02d}.txt", "w") as f:
+    f.write(num)

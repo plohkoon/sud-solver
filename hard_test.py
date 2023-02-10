@@ -7,8 +7,9 @@ import time
 def debug(*args, **kwargs):
   print(*args, file=sys.stderr, **kwargs)
 
-if __name__ == "__main__":
-  base_name = f"hard"
+def test_hard(number):
+  debug("Testing Sudoku number", number)
+  base_name = f"hard_{number:02d}"
   puzzle_file_name = f"tests/puzzles/{base_name}.txt"
   cnf_file_name = f"tests/cnfs/{base_name}.cnf"
   assignments_file_name = f"tests/assignments/{base_name}.txt"
@@ -25,8 +26,8 @@ if __name__ == "__main__":
           stderr=dev_null
         )
         if sud2sat_response != 0:
-          debug("Sud2sat failed on test", "hard")
-          raise Exception("Sud2sat failed on test", "hard")
+          debug("Sud2sat failed on test", number)
+          raise Exception("Sud2sat failed on test", number)
 
   with open(resolutions_file_name, "w") as resolution:
     with open("/dev/null", "w") as dev_null:
@@ -39,8 +40,8 @@ if __name__ == "__main__":
       # 0 is error with command line args, 1 is error with input file, 3 is interrupted
       # so these are the actual failure cases
       if sat_response == 0 or sat_response == 1 or sat_response == 3:
-        debug("minisat failed on test", "hard")
-        raise Exception("minisat failed on test", "hard")
+        debug("minisat failed on test", number)
+        raise Exception("minisat failed on test", number)
 
   with open(assignments_file_name, "r") as assignment:
     with open(solutions_file_name, "w") as solution:
@@ -52,5 +53,11 @@ if __name__ == "__main__":
           stderr=dev_null
         )
         if sat2sud_response != 0:
-          debug("sat2sud failed on test", "hard")
-          raise Exception("sat2sud failed on test", "hard")
+          debug("sat2sud failed on test", number)
+          raise Exception("sat2sud failed on test", number)
+
+if __name__ == "__main__":
+  debug("Hello, world!")
+  for i in range(95):
+    t = threading.Thread(target=test_hard, args=(i + 1,))
+    t.start()
