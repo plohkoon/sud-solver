@@ -6,3 +6,6 @@
 
 *.cnf
 *.cnf_solved
+
+tests/resolutions/*.txt
+tests/assignments/*.txt
