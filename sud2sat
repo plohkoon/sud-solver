@@ -69,6 +69,7 @@ def build_box_cnf(dimension):
   # @param value: The value being checked by the conjunct
   # @return: A disjunct representing the statement "these two cells in the box do not share a value"
   def build_conjunct(row_of_box, column_of_box, cell1_of_box, cell2_of_box, value):
+    # Integer division and modulo are used to figure out how far down and right to move
     row1 = row_of_box * box_dimension + cell1_of_box // box_dimension
     column1 = column_of_box * box_dimension + cell1_of_box % box_dimension
 
