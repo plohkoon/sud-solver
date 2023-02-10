@@ -7,7 +7,7 @@ import sys
 def clean(raw_puzzle):
   single_line = raw_puzzle.replace('\n', '')
   cleaned = single_line.strip()
-  standardized = cleaned.translate(str.maketrans('0.*?', '0000'))
+  standardized = cleaned.translate(str.maketrans('0.*?123456789', '....012345678'))
 
   return standardized
 
