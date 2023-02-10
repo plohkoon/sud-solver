@@ -1,3 +1,36 @@
 #!/usr/bin/env python3
 
-print("Hello World")
+from typing import NewType
+import sys
+
+CNF = NewType("CNF", list[list[int]])
+
+def clean(raw_puzzle: str) -> str:
+  single_line = raw_puzzle.replace('\n', '')
+  cleaned = single_line.strip()
+  standardized = cleaned.translate(str.maketrans('0.*?', '0000'))
+
+  return standardized
+
+def build_cnf_string(sub_cnfs: list[CNF]) -> str:
+  list_of_clauses = [
+    " ".join(map(str, clause + [0])) for cnf in sub_cnfs for clause in cnf
+  ]
+  cnf_string = "\n".join(list_of_clauses)
+
+  number_of_clauses = len(list_of_clauses)
+  # TODO: This might be too static?
+  number_of_variables = 81 * 9
+
+  return f"p cnf {number_of_variables} {number_of_clauses}\n{cnf_string}"
+
+def main():
+  input_str = sys.stdin.read()
+  sudoku = clean(input_str)
+
+  print(sudoku)
+
+  print(build_cnf_string([[[1,2],[3,4]], [[5,6]]]))
+
+if __name__ == '__main__':
+  main()
