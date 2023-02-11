@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import re
 
 def debug(*args, **kwargs):
   print(*args, file=sys.stderr, **kwargs)
@@ -8,7 +9,7 @@ def debug(*args, **kwargs):
 # @param raw_puzzle: A string representing the puzzle to be solved
 # @return: A string representing the puzzle in a standardized format
 def clean(raw_puzzle):
-  single_line = raw_puzzle.replace('\n', '')
+  single_line = re.sub(r'\s+', '', raw_puzzle)
   cleaned = single_line.strip()
   standardized = cleaned.translate(str.maketrans('0.*?123456789', '....012345678'))
 
