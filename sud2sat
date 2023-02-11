@@ -19,7 +19,7 @@ def clean(raw_puzzle):
 # @param value: The value of the cell
 # @param dimension: The dimension of the sudoku puzzle
 # @param sgn: The sign of the variable
-# @return: A number representing the CNF variable
+# @return: A number representing the CNF variable in the range of 1 - dimension^3
 def convert_to_cnf_term(row, column, value, dimension, sgn):
   return sgn * (row * (dimension ** 2) + column * dimension + value + 1)
 
