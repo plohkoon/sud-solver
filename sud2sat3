@@ -127,7 +127,7 @@ def build_cell_max_cnf(dimension):
 # Extended Encoding CNF #2
 # @param dimension: The dimension of the puzzle
 # @return: A CNF representing the statement "every value appears at least once in each row"
-def build_value_in_row_cnf(dimension):
+def build_value_in_column_cnf(dimension):
   debug("Building value in row CNF")
   
   return[
@@ -139,7 +139,7 @@ def build_value_in_row_cnf(dimension):
 # Extended Encoding CNF #3
 # @param dimension: The dimension of the puzzle
 # @return: A CNF representing the statement "every value appears at least once in each column"
-def build_value_in_column_cnf(dimension):
+def build_value_in_row_cnf(dimension):
   debug("Building value in row CNF")
   
   return[
