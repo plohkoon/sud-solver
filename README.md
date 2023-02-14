@@ -39,6 +39,10 @@ The tests are arranged into multiple folders:
 
 The LaTeX and PDF file of the associated Report.
 
+### Stat
+
+The collected and parsed data analyzed from the resolutions of `minisat` across all the runnings.
+
 ## Running the Tests
 
 `minisat` needs to be installed to run the tests. On mac install it with `brew install minisat`. Windows and linux are installable [here](http://minisat.se/MiniSat.html).
