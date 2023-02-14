@@ -17,7 +17,7 @@ test_file_list = [test1_file, test2_file, test3_file]
 
 header = ["Test_Type","Number of clauses", "conflicts", "decisions", "Memory used", "CPU time"]
 
-dirlist = [BASE_DIRECTIORY + "/tests/resolutions/", BASE_DIRECTIORY + "/tests_2/resolutions/", BASE_DIRECTIORY + "/tests_2/resolutions/"]
+dirlist = [BASE_DIRECTIORY + "/tests/resolutions/", BASE_DIRECTIORY + "/tests_2/resolutions/", BASE_DIRECTIORY + "/tests_3/resolutions/"]
 
 for i in range(3):
   for (dirpath, dirnames, filenames) in os.walk(dirlist[i]):
@@ -53,9 +53,9 @@ for i in range(3):
 
 
 data1 = pd.DataFrame(test_list[0], columns = header)
-data2 = pd.DataFrame(test_list[0], columns = header)
-data3 = pd.DataFrame(test_list[0], columns = header)
+data2 = pd.DataFrame(test_list[1], columns = header)
+data3 = pd.DataFrame(test_list[2], columns = header)
 
-data1.to_csv(BASE_DIRECTIORY + "/stat/std_data.csv")
-data2.to_csv(BASE_DIRECTIORY + "/stat/ET2_data.csv")
-data3.to_csv(BASE_DIRECTIORY + "/stat/ET3_data.csv")
+data1.to_csv(BASE_DIRECTIORY + "/stat/std_data.csv", index = False)
+data2.to_csv(BASE_DIRECTIORY + "/stat/ET2_data.csv", index = False)
+data3.to_csv(BASE_DIRECTIORY + "/stat/ET3_data.csv", index = False)
