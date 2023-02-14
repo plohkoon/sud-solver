@@ -2,6 +2,12 @@
 
 Python Implementation to convert sudoku problems to CNF form for `minisat` and in turn convert a satisfying assignment of the CNF to a solved Sudoku board.
 
+## Students
+
+Huber, Gregory: V00862879
+Hsu, Leo: V00928098
+Umemura, Kashike: V00909836
+
 ## Running The Executables
 
 There are eight primary executables in the project:
