@@ -1,7 +1,7 @@
 ============================[ Problem Statistics ]=============================
 |                                                                             |
 |  Number of variables:           729                                         |
-|  Number of clauses:            8829                                         |
+|  Number of clauses:            9465                                         |
 |  Parse time:                   0.00 s                                       |
 |  Eliminated clauses:           0.00 Mb                                      |
 |  Simplification time:          0.00 s                                       |
@@ -10,15 +10,16 @@
 | Conflicts |          ORIGINAL         |          LEARNT          | Progress |
 |           |    Vars  Clauses Literals |    Limit  Clauses Lit/Cl |          |
 ===============================================================================
-|       100 |     236     1553     4206 |      569       99     18 | 46.365 % |
-|       250 |     236     1553     4206 |      626      249     15 | 46.365 % |
+|       100 |     236     1908     4916 |      699       99     17 | 58.848 % |
+|       250 |     236     1908     4916 |      769      249     16 | 58.850 % |
+|       475 |     236     1908     4916 |      846      474     14 | 58.851 % |
 ===============================================================================
-restarts              : 4
-conflicts             : 412            (74008 /sec)
-decisions             : 734            (0.00 % random) (131848 /sec)
-propagations          : 16003          (2874618 /sec)
-conflict literals     : 6025           (14.79 % deleted)
-Memory used           : 5.41 MB
-CPU time              : 0.005567 s
+restarts              : 5
+conflicts             : 579            (81826 /sec)
+decisions             : 1001           (0.00 % random) (141464 /sec)
+propagations          : 26985          (3813595 /sec)
+conflict literals     : 7609           (28.22 % deleted)
+Memory used           : 5.22 MB
+CPU time              : 0.007076 s
 
 SATISFIABLE

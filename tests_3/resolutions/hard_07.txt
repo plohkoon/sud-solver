@@ -1,25 +1,21 @@
 ============================[ Problem Statistics ]=============================
 |                                                                             |
 |  Number of variables:           729                                         |
-|  Number of clauses:            8829                                         |
+|  Number of clauses:            9646                                         |
 |  Parse time:                   0.00 s                                       |
-|  Eliminated clauses:           0.00 Mb                                      |
 |  Simplification time:          0.00 s                                       |
 |                                                                             |
 ============================[ Search Statistics ]==============================
 | Conflicts |          ORIGINAL         |          LEARNT          | Progress |
 |           |    Vars  Clauses Literals |    Limit  Clauses Lit/Cl |          |
 ===============================================================================
-|       100 |     236     1552     4206 |      569       99     20 | 46.365 % |
-|       250 |     236     1552     4206 |      625      249     19 | 46.365 % |
-|       475 |     236     1552     4206 |      688      474     19 | 46.365 % |
 ===============================================================================
-restarts              : 6
-conflicts             : 734            (95536 /sec)
-decisions             : 1226           (0.00 % random) (159573 /sec)
-propagations          : 29349          (3819992 /sec)
-conflict literals     : 13052          (15.80 % deleted)
-Memory used           : 5.84 MB
-CPU time              : 0.007683 s
+restarts              : 1
+conflicts             : 9              (2171 /sec)
+decisions             : 23             (0.00 % random) (5548 /sec)
+propagations          : 1346           (324650 /sec)
+conflict literals     : 49             (9.26 % deleted)
+Memory used           : 5.42 MB
+CPU time              : 0.004146 s
 
 SATISFIABLE

@@ -1,7 +1,7 @@
 ============================[ Problem Statistics ]=============================
 |                                                                             |
 |  Number of variables:           729                                         |
-|  Number of clauses:            8829                                         |
+|  Number of clauses:            9472                                         |
 |  Parse time:                   0.00 s                                       |
 |  Eliminated clauses:           0.00 Mb                                      |
 |  Simplification time:          0.00 s                                       |
@@ -10,17 +10,17 @@
 | Conflicts |          ORIGINAL         |          LEARNT          | Progress |
 |           |    Vars  Clauses Literals |    Limit  Clauses Lit/Cl |          |
 ===============================================================================
-|       100 |     241     1631     4320 |      598      100     13 | 45.954 % |
-|       250 |     241     1631     4320 |      657      250     16 | 45.954 % |
-|       475 |     240     1618     4292 |      723      471     16 | 46.091 % |
-|       812 |     240     1618     4292 |      795      808     15 | 46.091 % |
+|       100 |     240     2006     5141 |      735      100     15 | 58.162 % |
+|       250 |     240     2006     5141 |      809      250     18 | 58.162 % |
+|       475 |     240     2006     5141 |      889      475     17 | 58.162 % |
+|       812 |     238     1977     5082 |      978      792     17 | 58.436 % |
 ===============================================================================
 restarts              : 7
-conflicts             : 815            (95523 /sec)
-decisions             : 1374           (0.00 % random) (161041 /sec)
-propagations          : 43377          (5084037 /sec)
-conflict literals     : 12383          (21.08 % deleted)
-Memory used           : 5.36 MB
-CPU time              : 0.008532 s
+conflicts             : 1063           (102527 /sec)
+decisions             : 1752           (0.00 % random) (168981 /sec)
+propagations          : 52216          (5036265 /sec)
+conflict literals     : 16717          (22.52 % deleted)
+Memory used           : 5.60 MB
+CPU time              : 0.010368 s
 
 SATISFIABLE

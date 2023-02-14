@@ -13,11 +13,11 @@
 |       100 |     177     1000     2662 |      366      100     10 | 55.419 % |
 ===============================================================================
 restarts              : 3
-conflicts             : 232            (49817 /sec)
-decisions             : 349            (0.00 % random) (74941 /sec)
-propagations          : 10284          (2208289 /sec)
+conflicts             : 232            (50922 /sec)
+decisions             : 349            (0.00 % random) (76602 /sec)
+propagations          : 10284          (2257243 /sec)
 conflict literals     : 2476           (13.64 % deleted)
-Memory used           : 5.37 MB
-CPU time              : 0.004657 s
+Memory used           : 5.23 MB
+CPU time              : 0.004556 s
 
 SATISFIABLE

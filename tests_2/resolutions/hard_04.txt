@@ -1,7 +1,7 @@
 ============================[ Problem Statistics ]=============================
 |                                                                             |
 |  Number of variables:           729                                         |
-|  Number of clauses:            8829                                         |
+|  Number of clauses:            9472                                         |
 |  Parse time:                   0.00 s                                       |
 |  Eliminated clauses:           0.00 Mb                                      |
 |  Simplification time:          0.00 s                                       |
@@ -10,14 +10,14 @@
 | Conflicts |          ORIGINAL         |          LEARNT          | Progress |
 |           |    Vars  Clauses Literals |    Limit  Clauses Lit/Cl |          |
 ===============================================================================
-|       100 |     238     1595     4362 |      584       99     11 | 46.365 % |
+|       100 |     239     1958     5088 |      717      100     12 | 58.436 % |
 ===============================================================================
 restarts              : 2
-conflicts             : 143            (32120 /sec)
-decisions             : 268            (0.00 % random) (60198 /sec)
-propagations          : 6063           (1361860 /sec)
-conflict literals     : 1466           (20.07 % deleted)
-Memory used           : 5.42 MB
-CPU time              : 0.004452 s
+conflicts             : 134            (28492 /sec)
+decisions             : 221            (0.00 % random) (46991 /sec)
+propagations          : 6833           (1452902 /sec)
+conflict literals     : 1596           (17.22 % deleted)
+Memory used           : 5.19 MB
+CPU time              : 0.004703 s
 
 SATISFIABLE

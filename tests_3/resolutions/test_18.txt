@@ -13,9 +13,9 @@
 restarts              : 1
 conflicts             : 0              (0 /sec)
 decisions             : 1              (0.00 % random) (299 /sec)
-propagations          : 729            (218198 /sec)
+propagations          : 729            (218329 /sec)
 conflict literals     : 0              ( nan % deleted)
-Memory used           : 5.41 MB
-CPU time              : 0.003341 s
+Memory used           : 5.19 MB
+CPU time              : 0.003339 s
 
 SATISFIABLE

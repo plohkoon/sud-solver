@@ -5,3 +5,5 @@
 *.synctex.gz
 
 .DS_STORE
+
+__pycache__

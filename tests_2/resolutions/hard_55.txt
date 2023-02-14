@@ -1,7 +1,7 @@
 ============================[ Problem Statistics ]=============================
 |                                                                             |
 |  Number of variables:           729                                         |
-|  Number of clauses:            8829                                         |
+|  Number of clauses:            9242                                         |
 |  Parse time:                   0.00 s                                       |
 |  Eliminated clauses:           0.00 Mb                                      |
 |  Simplification time:          0.00 s                                       |
@@ -12,11 +12,11 @@
 ===============================================================================
 ===============================================================================
 restarts              : 1
-conflicts             : 18             (4828 /sec)
-decisions             : 35             (0.00 % random) (9388 /sec)
-propagations          : 1434           (384657 /sec)
-conflict literals     : 198            (15.74 % deleted)
-Memory used           : 5.20 MB
-CPU time              : 0.003728 s
+conflicts             : 18             (4479 /sec)
+decisions             : 35             (0.00 % random) (8709 /sec)
+propagations          : 1567           (389898 /sec)
+conflict literals     : 141            (23.37 % deleted)
+Memory used           : 5.19 MB
+CPU time              : 0.004019 s
 
 SATISFIABLE

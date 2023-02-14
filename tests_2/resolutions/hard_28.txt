@@ -1,7 +1,7 @@
 ============================[ Problem Statistics ]=============================
 |                                                                             |
 |  Number of variables:           729                                         |
-|  Number of clauses:            8829                                         |
+|  Number of clauses:            9498                                         |
 |  Parse time:                   0.00 s                                       |
 |  Eliminated clauses:           0.00 Mb                                      |
 |  Simplification time:          0.00 s                                       |
@@ -10,16 +10,16 @@
 | Conflicts |          ORIGINAL         |          LEARNT          | Progress |
 |           |    Vars  Clauses Literals |    Limit  Clauses Lit/Cl |          |
 ===============================================================================
-|       100 |     242     1637     4390 |      600      100     15 | 45.405 % |
-|       250 |     242     1637     4390 |      660      250     18 | 45.405 % |
-|       475 |     242     1637     4390 |      726      475     17 | 45.405 % |
+|       100 |     242     2015     5146 |      738      100     24 | 58.025 % |
+|       250 |     242     2015     5146 |      812      250     23 | 58.025 % |
+|       475 |     241     2015     5146 |      893      474     22 | 58.162 % |
 ===============================================================================
-restarts              : 5
-conflicts             : 565            (84366 /sec)
-decisions             : 868            (0.00 % random) (129610 /sec)
-propagations          : 27708          (4137375 /sec)
-conflict literals     : 9496           (16.34 % deleted)
-Memory used           : 5.36 MB
-CPU time              : 0.006697 s
+restarts              : 6
+conflicts             : 671            (84862 /sec)
+decisions             : 1084           (0.00 % random) (137094 /sec)
+propagations          : 31939          (4039332 /sec)
+conflict literals     : 14057          (11.66 % deleted)
+Memory used           : 5.71 MB
+CPU time              : 0.007907 s
 
 SATISFIABLE

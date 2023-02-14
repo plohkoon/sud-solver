@@ -12,11 +12,11 @@
 ===============================================================================
 ===============================================================================
 restarts              : 1
-conflicts             : 13             (3378 /sec)
-decisions             : 22             (0.00 % random) (5716 /sec)
-propagations          : 1043           (270979 /sec)
+conflicts             : 13             (3402 /sec)
+decisions             : 22             (0.00 % random) (5758 /sec)
+propagations          : 1043           (272965 /sec)
 conflict literals     : 40             (2.44 % deleted)
-Memory used           : 5.19 MB
-CPU time              : 0.003849 s
+Memory used           : 5.56 MB
+CPU time              : 0.003821 s
 
 SATISFIABLE
