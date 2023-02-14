@@ -4,9 +4,4 @@
 *.log
 *.synctex.gz
 
-*.cnf
-*.cnf_solved
-
-tests/resolutions/*.txt
-tests/assignments/*.txt
-tests/solutions/*.txt
+.DS_STORE

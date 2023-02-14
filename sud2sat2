@@ -164,7 +164,7 @@ def main():
   
   # --------- Extended Task 2 Code Call Start ---------
   
-  cell_max_cnf = build_cell_max_cnf(dimensions)
+  cell_max_cnf = build_cell_max_cnf(dimension)
   
   # --------- Extended Task 2 Code Call End ---------
 
