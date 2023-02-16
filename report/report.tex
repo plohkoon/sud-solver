@@ -35,6 +35,44 @@
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb, amsthm, graphicx, mathtools}
+\usepackage{indentfirst}
+\usepackage{tikz}
+\usepackage[colorlinks=true]{hyperref}
+
+\title{SAT Solvers for Sudoku Problems}
+% TODO fill in and alphabetize
+\author{
+  Huber, Gregory \\
+  V00862879
+  \and
+  Hsu, Leo \\
+  V00928098
+  \and
+  Kashike Uemura \\
+  V00909836
+}
+
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+%commands for the various number spaces
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Zn}{\mathbb{Z}_{n}}
+\newcommand{\F}{\mathbb{F}}
+%commands for the different braces
+\newcommand{\pa}[1]{\left(#1\right)}
+\newcommand{\bra}[1]{\left[#1\right]}
+\newcommand{\cur}[1]{\left\{#1\right\}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
 \graphicspath{{./images/}}
 % \includegraphics[scale=0.5]{image_name_in_folder.png}
 
@@ -69,8 +107,26 @@
 
 \maketitle
 
-\section{Introduction}
+\section{Introduction and Background}
 
-TODO
+\indent In this project, programs are written to fully solve partially solved Sudoku puzzles using the SAT solver, \texttt{miniSAT}. In particular, we have programs \texttt{sud2sat1} and \texttt{sat2sud1} that, respectively, reads a single Sudoku puzzle before converting it to a CNF formula which is then suited to be inputted to \texttt{miniSAT} to be solved, and translates the output produced by \texttt{miniSAT} for a given puzzle instance back to a solved Sudoku puzzle.
+\newline
+
+The general approach in which \texttt{sud2sat1} is implemented is that for each cell $(i, j)$ in the puzzle taking on a possible value $k$ we have a propositional variable $x_{ijk}$, and for each of $x_{ijk}$ we create a unique integer for it given by
+\begin{equation}\label{base9}
+81 \times (i-1) + 9 \times (j-1) + (k-1) + 1
+\end{equation}
+where we associate $ijk$ with a base-9 number with the final additional $1$ for the encoding to be suited for $\texttt{miniSAT}$. With this encoding for the propositional variables, we start with a formula with the `minimal' encoding for the constraints (page 5 of the CSC 322 lecture slides on SAT Solvers). Finally, we add to the formula singular terms (conjuncts with only one variable) for each known value from the given puzzle before we feed the formula (in DIMACS format) to \texttt{miniSAT}.
+\newline
+
+For \texttt{sat2sud1}, the approach is fairly straightforward. That is, we parse through the output of \texttt{miniSAT} (a satisfying assignment) to look for all the positive integer values (that correspond to the propositional variables that are assigned \texttt{TRUE}) and, in essence, recover the triple $(i, j, k)$ from equation (\ref{base9}) and reconstruct the puzzle with cell $(i, j)$ taking on value $k$.
+\newline
+
+The extended tasks are also done in this project, where we have programs \texttt{sud2sat2} (\emph{efficient encoding}), \texttt{sud2sat2}, \texttt{sat2sud3} (\emph{extended encoding}), and \texttt{sat2sud3}. Note that since for each $1 \leq i \leq 3$, \texttt{sat2sud}$i$ simply translates a truth assignment of the propositional variables back to a solved puzzle configuration, it makes sense that their implementations coincide with one another, and it turns out to be the case for us this project. Moreover, we also observe that \texttt{sud2sat2} is obtained from \texttt{sud2sat1} by adding an additional constraint, and that \texttt{sud2sat3} is obtained from \texttt{sud2sat2} by adding 3 additional constraints.
+
+\section{Performance Evaluation}
+
+
+
 
 \end{document}
