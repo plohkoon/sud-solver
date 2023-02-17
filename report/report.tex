@@ -1,36 +1,12 @@
 \documentclass[12pt]{article}
 
 \usepackage{amsmath, amssymb, amsthm, graphicx, mathtools}
-
-\usepackage{tikz}
-
-\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
-%commands for the various number spaces
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\T}{\mathbb{T}}
-\newcommand{\K}{\mathbb{K}}
-\newcommand{\Zn}{\mathbb{Z}_{n}}
-\newcommand{\F}{\mathbb{F}}
-%commands for the different braces
-\newcommand{\pa}[1]{\left(#1\right)}
-\newcommand{\bra}[1]{\left[#1\right]}
-\newcommand{\cur}[1]{\left\{#1\right\}}
-
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
-
-\documentclass[12pt]{article}
-
-\usepackage{amsmath, amssymb, amsthm, graphicx, mathtools}
 \usepackage{indentfirst}
 \usepackage{tikz}
 \usepackage[colorlinks=true]{hyperref}
 
 \title{SAT Solvers for Sudoku Problems}
-% TODO fill in and alphabetize
+
 \author{
   Huber, Gregory \\
   V00862879
@@ -43,6 +19,7 @@
 }
 
 \usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+
 %commands for the various number spaces
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -53,6 +30,7 @@
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\Zn}{\mathbb{Z}_{n}}
 \newcommand{\F}{\mathbb{F}}
+
 %commands for the different braces
 \newcommand{\pa}[1]{\left(#1\right)}
 \newcommand{\bra}[1]{\left[#1\right]}
@@ -86,10 +64,6 @@
   tabsize=4
 }
 
-% \begin{lstlisting}
-%   <Code goes here>
-% \end{lstlisting}
-
 \begin{document}
 
 \maketitle
@@ -113,7 +87,22 @@ The extended tasks are also done in this project, where we have programs \texttt
 
 \section{Performance Evaluation}
 
+The statistics of every task were saved to a text file and analysed. The specific attributes that are analysed are \texttt{Number of clauses}, \texttt{Memory usage}, and \texttt{CPU time}.
 
+\begin{figure}[hbt!]
+	\centering
+	\includegraphics[scale=0.5]{average_std}
+	\caption{Average of the attributes \texttt{Number of Clauses}, \texttt{Memory Usage}, and \texttt{CPU Time} are shown on the charts a), c), and e) and the standard deviations of these attributes are shown on the charts b), d), and f) for each of the tasks which are labelled on the x-axis at the bottom of the figure. Standard Code is the original objective of this project, ET 1 represents the extended task 1, ET 2 the extended task 2, and ET 3 the extended task 3. }
+\end{figure}
 
+\textit{Figure 1} shows the averages and the standard deviation of each aforementioned attributes. In terms of averages, the \texttt{Number of clauses} and \texttt{Memory usage} the differences were insignificant for the two attributes. But for the \texttt{CPU time}, the extended task 2 took longer than any other task. This indicates that having more clauses does not necessary mean that it will take a longer \texttt{CPU time}. On the other hand, if we look at the standard deviations, for \texttt{Number of clauses}, there the minimum encoding and the extended task 1 has 0 as the standard deviation. This is because the standard code and the extended task 1 use the \textit{minimal encoding}, so these encodings use the least number of clauses. However, extended task 2 and 3 have some variance which are approximately 141 and 187 respectively. The standard deviation of \texttt{Memory used} were similar for the standard code, extended task 2 and extended task 3. Extended task 1 had a standard deviation value of approximately 0.03MB greater than the other values. As for the last attribute, \texttt{CPU time} the extended task 1 has the largest standard deviation, this would be expected, as the difference in the difficulty of the hard Sudokus are not likely to be similar, where ones with less pre-filled in cells are significantly harder.
+
+\begin{figure}[hbt!]
+	\centering
+	\includegraphics[scale=0.5]{worst_case}
+	\caption{Attributes (\texttt{Number of clauses}, \texttt{Memory usage}, and \texttt{CPU time}) for each task in their worst results that were recorded by \texttt{minisat}. Just like \textit{Figure 1} the tasks are labelled on the x-axis. a) represents the worst case number of clauses for each task, b) represents the worst case memory usage for each task and similarly c) shows the worst case CPU time for each task.}
+\end{figure}
+
+\textit{Figure 2} shows the worst case values of attributes \texttt{Number of clauses}, \texttt{Memory usage}, and \texttt{CPU time}. The task that has the most clauses is extended task 3. This is expected since this encoding is called the \textit{extended encoding}, which uses all 4 of the additional constraints. The task with the second most clauses is the extended task 2, which includes the first additional constraints. The \textit{minimal encoding} and the extended task 1 have the same number of clauses because they both use the same constraints, which is minimal. The \texttt{Memory usage} of all tasks were similar for the worst case. But on the other hand, the \texttt{CPU time} is significantly worse for extended task 1. This supports the possibility that having more clauses does not increase computation time but having a difficult Sudoku puzzle does increase it.
 
 \end{document}
