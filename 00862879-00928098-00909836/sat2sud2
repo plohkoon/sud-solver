@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+from lib.sat import (get_assignments,
+                    assign_values,
+                    format_puzzle,
+                    get_dimension_from_vars)
+from lib.reader import read_assignment
+
+def main():
+  raw_vars = read_assignment()
+
+  assignments = get_assignments(raw_vars)
+  dimension = get_dimension_from_vars(raw_vars)
+
+  raw_puzzle = assign_values(assignments, dimension)
+  formatted_puzzle = format_puzzle(raw_puzzle, dimension)
+
+  print(formatted_puzzle)
+
+if __name__ == "__main__":
+  main()

@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+
+#Extended Task 2 Code: Efficient Encoding
+
+import sys
+
+from lib.reader import clean
+from lib.cnf import (build_cell_cnf,
+                    build_row_cnf,
+                    build_column_cnf,
+                    build_box_cnf,
+                    build_constraints_cnf,
+                    build_cell_max_cnf)
+from lib.writer import build_cnf_string
+
+def main():
+  input_str = sys.stdin.read()
+  sudoku = clean(input_str)
+  dimension = int(len(sudoku) ** 0.5)
+
+  cell_cnf = build_cell_cnf(dimension)
+  row_cnf = build_row_cnf(dimension)
+  column_cnf = build_column_cnf(dimension)
+  box_cnf = build_box_cnf(dimension)
+  constraints_cnf = build_constraints_cnf(sudoku, dimension)
+  
+  # --------- Extended Task 2 Code Call Start ---------
+  
+  cell_max_cnf = build_cell_max_cnf(dimension)
+  
+  # --------- Extended Task 2 Code Call End ---------
+
+  cnf_string = build_cnf_string(
+    [cell_cnf, row_cnf, column_cnf, box_cnf, constraints_cnf, cell_max_cnf],
+    dimension
+  )
+
+  print(cnf_string)
+
+if __name__ == '__main__':
+  main()
